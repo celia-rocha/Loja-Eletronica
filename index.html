@@ -8,7 +8,7 @@
       href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
       media="screen and (max-width: 1440px)"
@@ -23,6 +23,12 @@
           <span class="blue-dot"></span>
           <span>Logo</span>
         </section>
+
+        <button class="menu-toggle" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
         <nav>
           <ul>
@@ -161,5 +167,22 @@
       </div>
       <div class="copyright-text">2024 &copy; Todos os Direitos Reservados</div>
     </footer>
+    <script>
+      const menuToggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector("header nav");
+
+      menuToggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+      });
+
+      // Fecha o menu ao clicar em um link
+      document.querySelectorAll("header nav a").forEach((link) => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("active");
+          menuToggle.classList.remove("active");
+        });
+      });
+    </script>
   </body>
 </html>

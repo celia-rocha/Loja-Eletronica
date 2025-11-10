@@ -63,7 +63,8 @@ header nav ul li {
 }
 
 header nav ul li a {
-  color: #3e3e3e;
+  background-color: #3e4fe516;
+  border-radius: 15px;
   font-size: 20px;
   letter-spacing: 0.37px;
   margin-right: 24px;
@@ -420,12 +421,14 @@ footer .copyright-text {
   letter-spacing: 0.4px;
   line-height: 22px;
 }
-
+/* Esconde o botão hambúrguer em telas maiores - ADICIONE NO CSS GLOBAL */
+.menu-toggle {
+  display: none;
+}
 /***********************************************************************************************
 
-/************************************************
 /* INÍCIO: Media Queries Completas e Refatoradas */
-/************************************************/
+
 /* Estilos para Desktops Menores (max-width: 1440px) */
 @media screen and (max-width: 1440px) {
   body {
@@ -443,9 +446,10 @@ footer .copyright-text {
     padding: 0 16px;
   }
   header .logo {
-    color: #24309e;
-    font-size: 15px;
-    padding-right: 70%;
+    font-size: 20px;
+  }
+  .header .logo .blue-dot {
+    background-color: #3e50e5;
   }
 
   /* Ajusta os produtos para ficarem 2 por linha */
@@ -471,18 +475,102 @@ footer .copyright-text {
 
 /* Estilos para Celulares (max-width: 768px) */
 @media screen and (max-width: 768px) {
-  header nav {
-    display: none;
+  /* MENU HAMBÚRGUER - INÍCIO */
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
   }
+
+  .menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background-color: #3e3e3e;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(10px);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-10px);
+  }
+
   header .container {
-    justify-content: center; /* Centraliza o logo */
+    justify-content: space-between;
   }
+
+  header nav {
+    display: block;
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: calc(100vh - 70px);
+    background-color: #fff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    overflow-y: auto;
+  }
+
+  header nav.active {
+    right: 0;
+  }
+
+  @media (max-width: 768px) {
+    header nav ul {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 0;
+    }
+
+    header nav ul li {
+      display: block;
+      border-bottom: 1px solid #eee;
+    }
+
+    header nav ul li a {
+      display: block;
+      padding: 15px 20px;
+      font-size: 18px;
+      margin-right: 0;
+      background-color: transparent;
+      border-radius: 0;
+      transition: all 0.3s ease; /* adiciona aqui também */
+    }
+
+    header nav ul li:last-of-type {
+      border-bottom: none;
+    }
+
+    header nav ul li a:hover {
+      background: #f5f6ff !important;
+      color: #3044fd !important;
+    }
+  }
+  /* MENU HAMBÚRGUER - FIM */
+
+  /* RESTO DO SEU CSS DE 768px AQUI */
   section.hero {
     padding: 0;
     margin: 0;
-    overflow-x: hidden; /* impede barra lateral */
+    overflow-x: hidden;
     position: relative;
-    background-color: #3e3e3ee6; /* fundo para texto legível */
+    background-color: #a5a0a0bd;
   }
   section.hero img {
     width: 50%;
@@ -499,6 +587,9 @@ footer .copyright-text {
     box-sizing: border-box;
     text-align: left;
   }
+  .hero-content button a {
+    line-height: 30px;
+  }
   .hero-content .container {
     justify-content: flex-start;
     height: auto;
@@ -508,14 +599,14 @@ footer .copyright-text {
     line-height: 30px;
     margin-bottom: 10px;
     max-width: 100%;
-    color: #ffffffd9;
+    color: #121212;
   }
   .hero-content p {
     font-size: 0.9rem;
     line-height: 20px;
     margin-bottom: 15px;
     max-width: 100%;
-    color: #ffffffa6;
+    color: #0f0e0ed3;
   }
   .hero-content button {
     font-size: 13px;
@@ -552,7 +643,7 @@ footer .copyright-text {
     height: 35px;
   }
   section.best-sellers h2 {
-    font-size: 25px; /* removido duplicado */
+    font-size: 25px;
   }
   section.best-sellers {
     padding-top: 65px;
