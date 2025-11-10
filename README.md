@@ -5,7 +5,7 @@
 ### Loja de eletrônicos com design moderno
 
 [![Site](https://img.shields.io/badge/🌐_Ver_Projeto-007ACC?style=for-the-badge)](https://celia-rocha.github.io/Loja-Eletronica/)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/celia-rocha/Loja-Eletronica)
+
 
 </div>
 
