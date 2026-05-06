@@ -2,7 +2,7 @@ import { Send } from 'lucide-react';
 
 const Newsletter = () => {
   return (
-    <section id="newsletter" className="py-16 px-6">
+    <section id="newsletter" className="pt-0 pb-12 lg:py-16 px-6">
       <div className="max-w-4xl mx-auto">
         <div className="bg-white border border-gray-100 rounded-[2.5rem] p-10 md:p-20 shadow-[0_30px_60px_rgba(0,0,0,0.12)] text-center space-y-10">
           
@@ -23,14 +23,14 @@ const Newsletter = () => {
             <input 
               type="email" 
               placeholder="Seu endereço de e-mail" 
-              className="flex-1 px-6 py-4 bg-gray-50 border-none rounded-2xl text-gray-800 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-100 transition-all text-sm font-medium"
+              className="flex-1 px-6 py-3 bg-gray-50 border-none rounded-xl text-gray-800 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-100 transition-all text-sm font-medium"
             />
             <button 
               type="submit" 
-              className="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-blue-700 transition-all active:scale-95 shadow-lg shadow-blue-100"
+              className="bg-blue-600 text-white px-8 py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:bg-blue-700 transition-all active:scale-95 shadow-lg shadow-blue-100"
             >
               Inscrever-se
-              <Send size={18} />
+              <Send size={16} />
             </button>
           </form>
 

@@ -14,6 +14,12 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navLinks = [
+    { label: 'Sobre nós', href: '#sobre' },
+    { label: 'Promoções', href: '#produtos' },
+    { label: 'Newsletter', href: '#newsletter' }
+  ];
+
   return (
     <header 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
@@ -22,7 +28,7 @@ const Header = () => {
           : 'h-20 bg-white shadow-sm'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
+      <div className="container mx-auto px-6 h-full flex items-center justify-between">
         
         {/* Logo Modernizada */}
         <div className="flex items-center gap-2 group cursor-pointer">
@@ -36,13 +42,13 @@ const Header = () => {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
-          {['Sobre nós', 'Promoções', 'Newsletter'].map((item) => (
+          {navLinks.map((item) => (
             <a
-              key={item}
-              href={`#${item.toLowerCase().replace(' ', '-')}`}
+              key={item.label}
+              href={item.href}
               className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-all relative group"
             >
-              {item}
+              {item.label}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
             </a>
           ))}
@@ -77,18 +83,18 @@ const Header = () => {
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex flex-col gap-6 mt-12">
-            {['Sobre nós', 'Promoções', 'Newsletter'].map((item) => (
+            {navLinks.map((item) => (
               <a
-                key={item}
-                href={`#${item.toLowerCase().replace(' ', '-')}`}
+                key={item.label}
+                href={item.href}
                 onClick={() => setIsMenuOpen(false)}
                 className="text-xl font-bold text-gray-800 hover:text-blue-600 border-b border-gray-100 pb-4"
               >
-                {item}
+                {item.label}
               </a>
             ))}
-            <button className="flex items-center justify-center gap-2 bg-blue-600 text-white p-4 rounded-xl font-bold mt-4">
-              <User size={20} />
+            <button className="flex items-center justify-center gap-2 bg-blue-600 text-white py-2.5 px-4 rounded-xl font-bold text-sm mt-4 hover:bg-blue-700 transition-colors">
+              <User size={18} />
               Minha Conta
             </button>
           </div>

@@ -81,24 +81,24 @@ const BestSellers = () => {
   ];
 
   return (
-    <section id="produtos" className="py-24 bg-transparent relative">
+    <section id="produtos" className="pt-12 pb-16 lg:py-24 bg-transparent relative">
       <div className="container mx-auto px-6 relative">
         {/* Cabeçalho da Seção */}
         <div className="flex flex-col items-center mb-16 text-center">
-          <h2 className="text-4xl font-black text-gray-900 mb-4 tracking-tighter">Mais Vendidos</h2>
+          <h2 className="text-xl md:text-3xl lg:text-4xl font-black text-gray-900 mb-4 tracking-tighter">Ofertas em Destaque</h2>
           <div className="w-16 h-1.5 bg-blue-600 rounded-full"></div>
-          <p className="mt-4 text-gray-500 max-w-md">Os preferidos da nossa comunidade, selecionados pela alta performance e design inovador.</p>
+          <p className="mt-4 text-gray-500 max-w-md">Ofertas em eletrônicos com os maiores descontos do mercado.</p>
         </div>
 
-        {/* Container do Carrossel com Botões Seguros (Flex) */}
-        <div className="flex items-center gap-4 group">
+        {/* Container do Carrossel */}
+        <div className="relative group w-full flex items-center">
           {/* Botão Voltar */}
           <button 
             onClick={() => scroll('left')} 
-            className="z-10 p-3 rounded-full bg-white shadow-lg text-gray-800 hover:text-blue-600 hover:scale-110 transition-all shrink-0 hidden md:flex opacity-50 group-hover:opacity-100"
+            className="absolute left-0 md:-left-4 z-20 p-2 md:p-3 rounded-full bg-white/90 backdrop-blur-sm shadow-lg text-gray-800 hover:text-blue-600 hover:scale-110 transition-all flex opacity-80 md:opacity-50 md:group-hover:opacity-100"
             aria-label="Anterior"
           >
-            <ChevronLeft size={28} />
+            <ChevronLeft size={24} className="md:w-7 md:h-7" />
           </button>
 
           {/* Área que Rola (Carrossel) */}
@@ -124,10 +124,10 @@ const BestSellers = () => {
           {/* Botão Avançar */}
           <button 
             onClick={() => scroll('right')} 
-            className="z-10 p-3 rounded-full bg-white shadow-lg text-gray-800 hover:text-blue-600 hover:scale-110 transition-all shrink-0 hidden md:flex opacity-50 group-hover:opacity-100"
+            className="absolute right-0 md:-right-4 z-20 p-2 md:p-3 rounded-full bg-white/90 backdrop-blur-sm shadow-lg text-gray-800 hover:text-blue-600 hover:scale-110 transition-all flex opacity-80 md:opacity-50 md:group-hover:opacity-100"
             aria-label="Próximo"
           >
-            <ChevronRight size={28} />
+            <ChevronRight size={24} className="md:w-7 md:h-7" />
           </button>
         </div>
       </div>

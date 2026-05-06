@@ -3,16 +3,16 @@ import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section id="sobre" className="relative h-[90vh] w-full flex items-center overflow-hidden">
+    <section id="sobre" className="relative h-[75vh] lg:h-[90vh] w-full flex items-center overflow-hidden">
       {/* Imagem de Fundo com Zoom Suave */}
       <div className="absolute inset-0 z-0">
         <img 
           src={heroImage} 
           alt="Relógio Inteligente em destaque" 
-          className="w-full h-full object-cover scale-105 animate-subtle-zoom"
+          className="w-full h-full object-cover object-[30%_center] lg:object-center scale-105 animate-subtle-zoom"
         />
         {/* Overlay Gradiente para dar contraste ao texto */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/70 lg:from-black/80 lg:via-black/40 to-transparent"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -26,21 +26,21 @@ const Hero = () => {
           </h1>
           
           <p className="text-base md:text-lg text-gray-300 mb-10 leading-relaxed max-w-lg">
-            Bem-vindo ao seu destino para tudo em tecnologia. Oferecemos uma seleção de dispositivos modernos de alta performance para o seu dia a dia.
+            Bem-vindo ao seu destino para tudo em tecnologia. Oferecemos uma seleção de dispositivos modernos de alta performance para o seu dia a dia. Aqui você encontra as melhores promoções em um só lugar.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-wrap gap-3 md:gap-4">
             <a 
               href="#produtos" 
-              className="group relative flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-xl font-bold text-base hover:bg-blue-700 transition-all hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] active:scale-95"
+              className="group relative flex items-center justify-center gap-2 bg-blue-600 text-white px-5 py-2 md:px-6 md:py-3 rounded-full md:rounded-xl font-bold text-sm md:text-base hover:bg-blue-700 transition-all hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] active:scale-95"
             >
               Ver Produtos
-              <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
+              <ArrowRight size={16} className="md:w-5 md:h-5 transition-transform group-hover:translate-x-1" />
             </a>
             
             <a 
               href="#newsletter" 
-              className="flex items-center justify-center px-6 py-3 rounded-xl font-bold text-base text-white border border-white/20 hover:bg-white/10 transition-all backdrop-blur-sm"
+              className="flex items-center justify-center px-5 py-2 md:px-6 md:py-3 rounded-full md:rounded-xl font-bold text-sm md:text-base text-white border border-white/20 hover:bg-white/10 transition-all backdrop-blur-sm"
             >
               Saiba Mais
             </a>
